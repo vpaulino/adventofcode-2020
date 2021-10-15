@@ -54,5 +54,45 @@ namespace AdventCode2020Day9
         }
 
 
+        [Fact]
+        public void WhenSetOfValuesContainsMatchWindowSetIsReturned()
+        {
+            EncondingErrorExecutor executor = new EncondingErrorExecutor();
+
+            long[] values = new long[] { 30, 100, 1, 26 };
+
+            long[] windowMatched = executor.FindSetOfValuesToSumUpToValue(values, 127);
+
+            Assert.Collection<long>(windowMatched,
+              firstElement => Assert.Equal(firstElement, 100)
+            , (secondElement) => Assert.Equal(secondElement, 1)
+
+            , (thirdElement) => Assert.Equal(thirdElement, 26)
+
+            );
+
+        }
+
+        [Fact]
+        public void WhenSetOfValuesFromExerciceExampleContainsMatchWindowSetIsReturned()
+        {
+            EncondingErrorExecutor executor = new EncondingErrorExecutor();
+
+            long[] values = GetValuesStream();
+
+            long[] windowMatched = executor.FindSetOfValuesToSumUpToValue(values, 127);
+
+            Assert.Collection<long>(windowMatched,
+              firstElement => Assert.Equal(firstElement, 15)
+            , (secondElement) => Assert.Equal(secondElement, 25)
+
+            , (thirdElement) => Assert.Equal(thirdElement, 47)
+
+            , (thirdElement) => Assert.Equal(thirdElement, 40)
+            );
+
+        }
+
+
     }
 }
