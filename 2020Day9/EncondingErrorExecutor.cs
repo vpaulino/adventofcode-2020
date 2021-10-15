@@ -11,6 +11,12 @@ namespace AdventCode2020Day9
             validator = new EncodingErrorValidator();
         }
 
+
+        internal long CalculateSumMinWithMax(long[] values) 
+        {
+            return values.Min() + values.Max();
+        }
+
         internal long[] FindSetOfValuesToSumUpToValue(long[] streamOfTotalValues, long value) 
         {
             int windowFirstIndex = 0;
@@ -21,7 +27,6 @@ namespace AdventCode2020Day9
 
             do
             {
-
                 do
                 {
                     windowMatched = streamOfTotalValues[windowFirstIndex..windowLastIndex];
@@ -34,7 +39,6 @@ namespace AdventCode2020Day9
                     return windowMatched;
 
                 }
-
                 sumOfCurrentWindow = 0;
                 windowFirstIndex++;
                 windowLastIndex = windowFirstIndex + 1;

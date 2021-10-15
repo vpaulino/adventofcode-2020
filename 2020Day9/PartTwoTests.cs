@@ -93,6 +93,27 @@ namespace AdventCode2020Day9
 
         }
 
+        [Fact]
+        public void WhenSetIsNotSortedAddingMinAndMaxShouldBeCorrect() {
+
+            EncondingErrorExecutor executor = new EncondingErrorExecutor();
+            var result = executor.CalculateSumMinWithMax(new long[] { 15, 25, 47, 40 });
+            Assert.Equal(result, 62);
+        }
+
+        [Fact]
+        public void WhenSetIsFromExerciseCalculateCorrectWeakness() 
+        {
+            EncondingErrorExecutor executor = new EncondingErrorExecutor();
+            long[] setOfData = SampleData.GetExerciceSequenceToValidate();
+
+            long? errorValueFound = executor.FindError(setOfData, 25);
+            long[] windowMatched = executor.FindSetOfValuesToSumUpToValue(setOfData, errorValueFound.Value);
+            long result = executor.CalculateSumMinWithMax(windowMatched);
+            Assert.Equal(76096372, result);
+
+        }
+
 
     }
 }
