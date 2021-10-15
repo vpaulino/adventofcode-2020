@@ -35,23 +35,24 @@ namespace AdventCode2020Day9
         }
 
             [Fact]
-        public void WhenSetOfValuesContainMatchWindowSetIsReturned() 
+        public void WhenSetOfValuesExactContainMatchWindowSetIsReturned() 
         {
             EncondingErrorExecutor executor = new EncondingErrorExecutor();
 
-            long[] values = GetValuesStream();
+            long[] values = new long[] { 30, 20, 50, 27 };
              
             long[] windowMatched = executor.FindSetOfValuesToSumUpToValue(values, 127);
 
                 Assert.Collection<long>(windowMatched, 
-                  firstElement => Assert.Equal(firstElement, 15)
-                , (secondElement) => Assert.Equal(secondElement, 25)
+                  firstElement => Assert.Equal(firstElement, 30)
+                , (secondElement) => Assert.Equal(secondElement, 20)
     
-                , (thirdElement) => Assert.Equal(thirdElement, 47)
+                , (thirdElement) => Assert.Equal(thirdElement, 50)
     
-                , (fourthElement) => Assert.Equal(fourthElement, 40));
+                , (fourthElement) => Assert.Equal(fourthElement, 27));
 
         }
+
 
     }
 }
