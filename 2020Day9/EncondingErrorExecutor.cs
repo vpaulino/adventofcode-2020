@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CodeEventDojo
+namespace AdventCode2020Day9
 {
     internal class EncondingErrorExecutor
     {
@@ -8,6 +8,12 @@ namespace CodeEventDojo
         public EncondingErrorExecutor()
         {
             validator = new EncodingErrorValidator();
+        }
+
+        internal long[] FindSetOfValuesToSumUpToValue(long[] streamOfTotalValues, long value) 
+        {
+            return new long[] { };
+        
         }
 
         internal long? FindError(long[] streamOfTotalValues, int preambleSize)

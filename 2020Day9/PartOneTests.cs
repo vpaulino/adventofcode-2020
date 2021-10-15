@@ -1,7 +1,7 @@
 using System.Linq;
 using Xunit;
 
-namespace CodeEventDojo
+namespace AdventCode2020Day9
 {
 
     public class PartOneTests
