@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CodeEventDojo
+namespace AdventCode2020Day9
 {
     public class EncodingErrorValidator {
 
