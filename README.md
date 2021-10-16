@@ -1,3 +1,3 @@
 # adventofcode-2020
-this repository contains adventofcode solutions developed using TDD approach.
+this repository contains adventofcode.com solutions developed using TDD approach.
 
